@@ -1,0 +1,81 @@
+<!doctype html>  
+  <html>  
+  <head>  
+    <title>Kiosk</title>  
+    <style type="text/css">
+       html, body {
+          overflow: hidden;
+          margin: auto;
+          height: 100%;
+          width: 100%;
+       }
+       #defaultCountdown { width: 40px; height: 35px; position:fixed; bottom:0px; right:0px; }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.countdown.css"> 
+    <script type="text/javascript" src="js/jquery.plugin.min.js"></script> 
+    <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+    <script>
+      function load() {  
+        var urls = [
+                    'http://www.ohgo.com/dashboard/cincinnati',
+                    'trafficcam.html',
+                    'riverfront.html',
+                    'http://time.is/Cincinnati',
+                    'http://newsmap.jp',
+                    'http://www.accuweather.com/en/us/cincinnati-oh/45246/hourly-weather-forecast/19409_pc',
+                    'http://www.wunderground.com/cgi-bin/findweather/getForecast?brand=wxmap&query=39.23778,-84.47250&lat=39.23778&lon=-84.47250&zoom=9&type=map&units=english&wxsn=0&rad=1&rad.num=6&rad.spd=25&rad.opa=70&rad.stm=0&rad.type=N0R&rad.type2=&rad.smo=1&rad.mrg=0&sat=0&cams=0&svr=0&tor=1&tor.show=now&ib=0',
+                    'http://www.wunderground.com/severe.asp?region=mw#gotoMap',
+                    'http://www.reuters.com/news/pictures',
+                    'http://www.historynet.com/today-in-history',
+                    'https://www.google.com/trends/hottrends/visualize?nrow=5&ncol=5&pn=p1',
+                    'http://espn.go.com/nfl/team/_/name/cin/'
+                    'https://www.youtube.com/embed/0fYL_qiDYf0?hd=1&autoplay=1&cc_load_policy=0&controls=0&disablekb=1&iv_load_policy=3&loop=1&modestbranding=1&showinfo=0',
+                   ];
+//                    'http://espn.go.com/mlb/team/_/name/cin/',
+        var delaySec = [15, 10, 20, 20, 30, 10, 30, 10, 10, 10, 10, 10, 45];
+        var pos = 0;
+        var lastID = -1;
+
+        next();
+
+        function next()
+        {
+          // clear last callback
+          if(lastID != -1) clearInterval(lastID);
+
+          // wrap position number?
+          if(pos == urls.length) pos = 0; // reset the counter
+
+          // rotate to new page
+          document.getElementById('rotate').src = urls[pos];
+
+          // set new callback
+          lastID = setInterval(next, delaySec[pos]*1000);
+
+          // set new countdown
+          $('#defaultCountdown').countdown('destroy');
+          delayStr = '+' + delaySec[pos];
+          $('#defaultCountdown').countdown({until: delayStr, compact: true, format: 'S'});
+
+          // increment position
+          pos++;
+        }
+      }  
+      window.onload = load;  
+    </script>  
+  </head>  
+  <body>  
+    <div id="defaultCountdown"></div>
+    <iframe id="rotate" frameborder=0 border=0 width="100%" height="100%"></iframe>
+  </body>  
+</html>  
+
+
+
+
+
+
+
+
+
