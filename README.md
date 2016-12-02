@@ -15,3 +15,6 @@ Some websites detect iframes and break out of them.  There's no easy way around 
 
 ## Countdown Timer
 A minified version of http://keith-wood.name/countdown.html is included (MIT license).
+
+## Warning
+If running this kiosk continuously, be aware that you'll be making a ton of requests to the websites in your rotation.  Be aware of the usage policies on the sites in your rotation.  Use at your own risk.
