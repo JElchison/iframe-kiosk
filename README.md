@@ -1,6 +1,9 @@
 # iframe-kiosk
 iframe-based kiosk that uses JavaScript to continuously rotate through a list of webpages.  Includes jQuery countdown timer until next webpage.
 
+## Example
+To see a running example, check out https://jelchison.github.io/iframe-kiosk/
+
 ## Webpages
 Your own custom webpages can be used, instead of the Cincinnati-centril webpages provided.  Be sure to keep `delaySec` in sync with `urls`.
 
