@@ -5,7 +5,7 @@ iframe-based kiosk that uses JavaScript to continuously rotate through a list of
 To see a running example, check out https://jelchison.github.io/iframe-kiosk/
 
 ## Webpages
-Your own custom webpages can be used, instead of the Cincinnati-centril webpages provided.  Be sure to keep `delaySec` in sync with `urls`.
+Your own custom webpages can be used, instead of the Cincinnati-centric webpages provided.  Be sure to keep `delaySec` in sync with `urls`.
 
 ### Mixed Content
 Beware the standard pitfall:  Browsers may reject mixed content.  If you're serving index.html via HTTPS, browsers may not want to load HTTP webpages in the iframe.
