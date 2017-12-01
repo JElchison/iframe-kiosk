@@ -1,7 +1,7 @@
-<!doctype html>  
-  <html>  
-  <head>  
-    <title>Kiosk</title>  
+<!doctype html>
+  <html>
+  <head>
+    <title>Kiosk</title>
     <style type="text/css">
        html, body {
           overflow: hidden;
@@ -12,11 +12,11 @@
        #defaultCountdown { width: 40px; height: 35px; position:fixed; bottom:0px; right:0px; }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/jquery.countdown.css"> 
-    <script type="text/javascript" src="js/jquery.plugin.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="css/jquery.countdown.css">
+    <script type="text/javascript" src="js/jquery.plugin.min.js"></script>
     <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
     <script>
-      function load() {  
+      function load() {
         var urls = [
                     'http://www.ohgo.com/dashboard/cincinnati',
                     'trafficcam.html',
@@ -30,10 +30,10 @@
                     'http://www.historynet.com/today-in-history',
                     'https://www.google.com/trends/hottrends/visualize?nrow=5&ncol=5&pn=p1',
                     'http://espn.go.com/nfl/team/_/name/cin/',
+                    'https://www.youtube.com/embed/0fYL_qiDYf0?hd=1&autoplay=1&cc_load_policy=0&controls=0&disablekb=1&iv_load_policy=3&loop=1&modestbranding=1&showinfo=0'
                    ];
 //                    'http://espn.go.com/mlb/team/_/name/cin/',
-//                    'https://www.youtube.com/embed/0fYL_qiDYf0?hd=1&autoplay=1&cc_load_policy=0&controls=0&disablekb=1&iv_load_policy=3&loop=1&modestbranding=1&showinfo=0'
-        var delaySec = [15, 10, 20, 20, 30, 10, 10, 10, 10, 10, 10, 10];
+        var delaySec = [15, 10, 20, 20, 30, 10, 10, 10, 10, 10, 10, 10, 30];
         var pos = 0;
         var lastID = -1;
 
@@ -61,21 +61,12 @@
           // increment position
           pos++;
         }
-      }  
-      window.onload = load;  
-    </script>  
-  </head>  
-  <body>  
+      }
+      window.onload = load;
+    </script>
+  </head>
+  <body>
     <div id="defaultCountdown"></div>
     <iframe id="rotate" frameborder=0 border=0 width="100%" height="100%"></iframe>
-  </body>  
-</html>  
-
-
-
-
-
-
-
-
-
+  </body>
+</html>
